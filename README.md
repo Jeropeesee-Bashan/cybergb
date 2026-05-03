@@ -23,14 +23,14 @@ A toolkit for developing software and animations for addressable LED strips
 ## Quick Start
 
 ### Build Visualizer
-```
+```sh
 cd visualizer
 cmake -S . -B build -DCMAKE_BUILD_TYPE=Release
 cmake --build build -j
 ```
 
 ### Run with example generator
-```
+```sh
 ./service/emulator.sh rgb-strip ./visualizer/build/visualizer &
 python3 service/generator.py <./rgb-strip >./rgb-strip
 ```
