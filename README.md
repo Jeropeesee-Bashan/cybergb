@@ -1,10 +1,10 @@
 # CybeRGB
 
 <p align="center">
-  <img src="docs/cybergb-demo.gif" alt="CybeRGB Demo" width="720">
+  <img src="docs/cybergb-demo.gif" alt="CybeRGB Demo" width="256">
 </p>
 
-**LED Strip SDK • Firmware • Emulator**
+<p align="center"><strong>LED Strip SDK • Firmware • Emulator</strong></p>
 
 A toolkit for developing software and animations for addressable LED strips
 (WS2812, SK6812, APA102 and others). **Currently in development!**
