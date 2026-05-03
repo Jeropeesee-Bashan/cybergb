@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.15 FATAL_ERROR)
 
-project(visualizer VERSION 0.1 LANGUAGES C)
+project(visualizer VERSION 1.0.0 LANGUAGES C)
 
 find_package(PkgConfig REQUIRED)
 
