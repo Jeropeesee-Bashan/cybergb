@@ -1,4 +1,4 @@
-from .base import Event, Output, Base as Subsystem
+from .base import Base as Subsystem, Event, Output
 from .dummy import Dummy
 
-__all__ = ["Event", "Output", "Subsystem", "Dummy"]
+__all__ = ["Subsystem", "Event", "Output", "Dummy"]
