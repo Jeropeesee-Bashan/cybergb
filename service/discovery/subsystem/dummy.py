@@ -1,6 +1,7 @@
 import asyncio
 from collections.abc import AsyncGenerator
-from typing import final, override
+from typing import final
+from typing_extensions import override
 
 from pydantic import BaseModel
 

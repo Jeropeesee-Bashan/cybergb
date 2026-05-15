@@ -1,7 +1,8 @@
 from abc import ABC, abstractmethod
 from collections.abc import AsyncIterator, MutableMapping
 from enum import StrEnum
-from typing import ClassVar, TypedDict, override
+from typing import ClassVar, TypedDict
+from typing_extensions import override
 
 from pydantic import BaseModel
 
