@@ -4,7 +4,7 @@
  */
 
 #define TITLE "CybeRGB Visualizer"
-#define VERSION "0.0.1"
+#define VERSION "1.0.0"
 #define IDENTIFIER "su.kulenko.cybergb"
 
 #include <SDL3/SDL.h>
