@@ -237,8 +237,12 @@ static int loop(struct app_data *data)
     geometry_set_colors(&data->geometry, event.user.data1);
     SDL_free(event.user.data1);
   } else if (event.type == data->updated_type + 1) {
-    geometry_set_positions(&data->geometry, (Uint32)(uintptr_t)event.user.data1,
-                           data->geometry.segments, data->w, data->h);
+    if (geometry_set_positions(&data->geometry,
+                               (Uint32)(uintptr_t)event.user.data1,
+                               data->geometry.segments, data->w, data->h)) {
+      SDL_LogError(SDL_LOG_CATEGORY_ERROR, "Failed to update LED geometry");
+      return 2;
+    }
   }
 
   if (event.type == data->updated_type ||
@@ -268,7 +272,7 @@ static int deinit(struct app_data *data, int result)
     SDL_DestroyWindow(data->window);
   SDL_Quit();
 
-  return result != 0 && io_task_status;
+  return result > 1 ? result : io_task_status;
 }
 
 int main(int argc, char *argv[])

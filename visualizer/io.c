@@ -98,8 +98,11 @@ static int update_colors(SDL_Event *event)
   size = data.leds * 3;
   colors = SDL_malloc(size);
 
-  if (colors == NULL)
-    return 0;
+  if (colors == NULL) {
+    SDL_OutOfMemory();
+    SDL_LogWarn(SDL_LOG_CATEGORY_APPLICATION, "Failed to allocate color data");
+    return 1;
+  }
 
   if (g_input_stream_read_all(input, colors, size, &read, cancellable, NULL) ==
           FALSE ||
@@ -185,7 +188,7 @@ static int task(void *task_data)
   }
 
   deinit();
-  return 0;
+  return result;
 }
 
 SDL_Thread *io_task(struct geometry *geometry, Uint32 update_event_type)
